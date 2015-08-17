@@ -16,9 +16,15 @@ class UsersController < ApplicationController
       user=User.new(user_params)
       if user.save 
         session[:user_id] = user.id
+        if user.is_npo
+          redirect_to npoform_path 
+
+        else
         redirect_to profile_path(current_user)
+        end
       else 
-        redirect_to signup_path
+      redirect_to signup_path
+
       end
     end
   end
