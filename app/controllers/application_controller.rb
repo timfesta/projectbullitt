@@ -8,5 +8,12 @@ class ApplicationController < ActionController::Base
   end
   	helper_method :current_user
 
+  def logged_in?
+  	current_user != nil
+  end
+
+  # this lets us use logged_in? method in the views.
+  helper_method :logged_in?
+
   	
 end
