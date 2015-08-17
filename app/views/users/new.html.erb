@@ -2,7 +2,7 @@
 <div class="col-sm-4 col-sm-offset-4">
 <br>
   <div class="signupbox">
-  <legend>signup for amazing opportunitiesx</legend>
+  <legend>signup for amazing opportunities</legend>
   <%= form_for @user do |f| %>
      <%= f.label :username, "username" %>:
      <%= f.text_field :username, class:"form-control", required: true %><br />
@@ -14,8 +14,8 @@
 
      <%= f.select :is_npo, options_for_select(
         [
-          ["I represent a non-profit org.", true],
-          ["I'm a developer", false],
+          ["i represent a non-profit org.", true],
+          ["i'm a developer.", false],
           
         ]
       ), {}, class: "form-control col-sm-4" %>
