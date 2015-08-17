@@ -22,11 +22,11 @@
 		<%= link_to "Project Bullitt", root_path, class: "navbar-header navbar-brand" %>
 		<!-- log in / log out -->
 		<% if logged_in? %>
-			<%= link_to "Profile", profile_path, class: "navbar-header navbar-brand" %>
+			<%= link_to "Profile", profile_path(current_user), class: "navbar-header navbar-brand" %>
 			<%= link_to "Logout", logout_path, class: "btn navbar-btn navbar-right btn-warning" %>
 		<% else %>
 			<%= link_to "Login", login_path, class: "btn navbar-btn navbar-right btn-default" %>
-			<%= link_to "Sign Up", login_path, class: "btn navbar-btn navbar-right btn-primary" %>
+			<%= link_to "Sign Up", signup_path, class: "btn navbar-btn navbar-right btn-primary" %>
 		<% end %>
 	</div>
 </nav>

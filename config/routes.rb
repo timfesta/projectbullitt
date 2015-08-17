@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
 
-
+  resources :npos
+  get '/npoform', to: 'npos#new'
+  get '/npo/:id', to: 'npos#show'
 end
