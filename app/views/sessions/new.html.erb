@@ -1,0 +1,21 @@
+<div class="loginpage">
+
+<div class="col-sm-4 col-sm-offset-4">
+  <br>
+  <div class="loginbox">
+  
+  <legend>log in</legend>
+
+  <%= form_for :user, url: sessions_path, :html => {:id => "new_login"} do |f| %>
+    <%= f.label :email, "email" %>:
+    <%= f.email_field :email, class:"form-control", required: true %><br />
+
+    <%= f.label :password, "password" %>:
+    <%= f.password_field :password, class:"form-control", required: true %><br />
+    <%= f.submit "log in", class:"btn btn-primary" %>
+  <% end %>
+  <br>
+</div>
+
+</div>
+</div>`
