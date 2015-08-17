@@ -12,7 +12,7 @@ class NposController < ApplicationController
 	def create
 		npo = current_user.npos.new(npo_params)
 		if npo.save
-			redirect_to npoprofile
+			redirect_to npo_path(npo)
 		else
 			redirect_to root
 		end
