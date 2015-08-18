@@ -9,7 +9,7 @@
 
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.5/united/bootstrap.min.css">
 
-	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
 </head>
 <body>
 
@@ -18,9 +18,8 @@
 		<%= link_to "Project Bullitt", root_path, class: "navbar-header navbar-brand" %>
 		<!-- log in / log out -->
 		<% if logged_in? %>
-		<%= link_to "Logout", logout_path, class: "btn navbar-btn navbar-right btn-primary" %>
-			
-			<%= link_to "Profile", (current_user.is_npo ? npo_path(current_user) : profile_path(current_user)), class: "btn navbar-btn navbar-right btn-primary" %>			
+			<%= link_to "Logout", logout_path, class: "btn navbar-btn navbar-right btn-primary" %>
+			<%= link_to "Profile", profile_path(current_user), class: "btn navbar-btn navbar-right btn-primary" %>	
 		<% else %>
 			<%= link_to "Login", login_path, class: "btn navbar-btn navbar-right btn-primary" %>
 			<%= link_to "Sign Up", signup_path, class: "btn navbar-btn navbar-right btn-primary" %>
@@ -28,18 +27,9 @@
 	</div>
 </nav>
 
-
-
-
-
-
-
 <div="container">
 	<%= yield %>
 </div>
-
-
-
 
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
