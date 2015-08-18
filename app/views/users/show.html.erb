@@ -3,20 +3,29 @@
 
 <div class="container">
   <div class="row">
-  	
-    <div class="col-md-4">
-		<div class="thumbnail">
 
-		    <h3><%= @user.username %> </h3>
-		    <p>email: <%= @user.email %> </p>
-		    <p>date joined: <%= @user.created_at %> </p>
-		</div>
-    </div>
-    <div class="col-md-offset-5">
-    	<div class="thumbnail">
-			<h3>This is where the completed tasks will be displayed.</h3>
-		</div>
-    </div>
+    <div class="col-md-4 thumbnail">
+	    <h3>username: <%= @user.username %> </h3>
+	    <p>email: <%= @user.email %> </p>
+	    <p>date joined: <%= @user.created_at %> </p>
+    </div>  
+    <div class="col-md-offset-5 thumbnail">
+    <% if current_user.is_npo == true %>
+        <% if current_user.npos.any? %>
+          <% @user.npos.each do |npo| %>
+            <div class="well">
+              <p>Non Profit Organization: <%= link_to npo.name, npo_path(npo) %></p>
+            </div>    
+          <% end %>
+        <% end %>
+      <%= link_to "add a nonprofit organization", new_npo_path, class: "btn btn-primary" %>
+    <% else %>
+      <p>This is where developers will be able to see projects that they are involved in or trying to join (@project)</p>
+      <% current_user.projects.each do |project| %> 
+      <%= project.id %> 
+      <% end %> 
+    <% end %>
+			<h3>This is where the completed tasks will be displayed. (@projects)</h3>
 
   </div>
 </div>
