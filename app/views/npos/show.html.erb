@@ -18,12 +18,10 @@
     	<% if @npo.tasks.any? %>
 	    	<% @npo.tasks.each do |task| %>
 	    		<p>Issue:<%= task.issue %></p>
-
-	    	<%= link_to "Add Task", new_npo_task_path(@npo), class: "btn btn-primary" %>
 	    	<% end %>
+	    	<%= link_to "add another task", new_npo_task_path(@npo), class: "btn btn-primary" %>
 	    <% else %>
-	    <%= link_to "Create A Task", new_npo_task_path(@npo), class: "btn btn-primary" %>
-
+	    <%= link_to "add your first task", new_npo_task_path(@npo), class: "btn btn-primary" %>
     	
     	<% end %>
 
