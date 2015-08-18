@@ -23,6 +23,14 @@ class NposController < ApplicationController
 		render :show
 	end
 
+	def edit
+		@npo = Npo.find(current_user)
+		render :edit
+	end
+
+	def update
+	end 
+
 	private 
 	def npo_params 
 		params.require(:npo).permit(:name, :about)
