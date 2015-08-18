@@ -15,8 +15,19 @@
     </div>
     <div class="col-md-offset-5">
     	<div class="thumbnail">
-			<h3>This is where the tasks will be displayed, we need to add the @task to the npos controller to do that</h3>
-			<%= link_to "Add Task", new_npo_task_path(@npo), class: "btn btn-primary" %>
+    	<% if @npo.tasks.any? %>
+	    	<% @npo.tasks.each do |task| %>
+	    		<p>Issue:<%= task.issue %></p>
+
+	    	<%= link_to "Add Task", new_npo_task_path(@npo), class: "btn btn-primary" %>
+	    	<% end %>
+	    <% else %>
+	    <%= link_to "Create A Task", new_npo_task_path(@npo), class: "btn btn-primary" %>
+
+    	
+    	<% end %>
+
+			
 		</div>
     </div>
 
