@@ -3,7 +3,7 @@
   <br>
       <div class="signupbox">
         <legend>Amazing Tasks</legend>
-        <%= form_for [@npo, @task] do |f| %>
+        <%= form_for @task do |f| %>
         <%= f.select :issue, options_for_select(
                         [
                             ["New Site", "New Site"],

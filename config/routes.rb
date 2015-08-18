@@ -10,13 +10,12 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   get '/logout', to: 'sessions#destroy'
 
-  resources :npos
+  resources :npos do 
+    resources :tasks
+  end
   get '/npoform', to: 'npos#new'
-  get '/npo/:id', to: 'npos#show'
 
-  resources :tasks
-  get '/newtask', to: 'tasks#new'
-  get '/task/:id', to: 'tasks#show'
+  # resources :tasks use this later for task functionality
 
 end
 
