@@ -4,7 +4,8 @@
   <br>
   <div class="loginbox">
   
-  <legend>log in</legend>
+  <legend>Login</legend>
+  <br>
 
   <%= form_for :user, url: sessions_path, :html => {:id => "new_login"} do |f| %>
     <%= f.label :email, "email" %>:
@@ -12,7 +13,7 @@
 
     <%= f.label :password, "password" %>:
     <%= f.password_field :password, class:"form-control", required: true %><br />
-    <%= f.submit "log in", class:"btn btn-primary" %>
+    <%= f.submit "Submit", class:"btn btn-primary" %>
   <% end %>
   <br>
 </div>
