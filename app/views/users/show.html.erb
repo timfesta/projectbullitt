@@ -19,7 +19,10 @@
         <% end %>
       <%= link_to "add a nonprofit organization", new_npo_path, class: "btn btn-primary" %>
     <% else %>
-    <p>This is where developers will be able to see projects that they are involved in or trying to join (@project)</p>
+      <p>This is where developers will be able to see projects that they are involved in or trying to join (@project)</p>
+      <% current_user.projects.each do |project| %> 
+      <%= project.id %> 
+      <% end %> 
     <% end %>
 			<h3>This is where the completed tasks will be displayed. (@projects)</h3>
   </div>

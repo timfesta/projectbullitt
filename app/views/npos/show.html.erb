@@ -19,7 +19,17 @@
 	    	<% @npo.tasks.each do |task| %>
 	    		<p>Issue:<%= task.issue %></p>
 
-          <%= link_to "Interested", new_project_path, class: "btn btn-primary" %>
+          <%= form_for :project, url: projects_path do |f| %>
+        
+             <%= f.hidden_field :task_id, class: "form-control", value: task.id%>
+             <%= f.hidden_field :status, class: "form-control", value: "pending"%>
+             <%= f.submit "interested!", class: "btn btn-primary" %>
+             <% end %>
+
+
+
+
+
 
 	    	<% end %>
         <br>

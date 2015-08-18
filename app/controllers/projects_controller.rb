@@ -1,14 +1,14 @@
 class ProjectsController < ApplicationController
 
-  def new 
-    @project = Project.new
-    render :new
-  end 
+  # def new 
+  #   @project = Project.new
+  #   render :new
+  # end 
 
   def create 
     project = current_user.projects.new(project_params)
     project.save
-      redirect_to project_path(project)
+    redirect_to profile_path(current_user)
   end
 
   def show
@@ -18,7 +18,7 @@ class ProjectsController < ApplicationController
 
 private
   def project_params 
-    params.require(:project).permit(:status)
+    params.require(:project).permit(:task_id, :status)
   end
 
 end
