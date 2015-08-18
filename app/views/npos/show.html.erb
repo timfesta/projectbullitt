@@ -9,7 +9,8 @@
 
 		    <h3>name: <%= @npo.name %> </h3>
 		    <p>about: <%= @npo.about %> </p>
-		    <p>data joined: <%= @time %> </p>
+		    <p>date joined: <%= @time %> </p>
+		    <%= link_to "Add Task", new_npo_task_path(@npo), class: "btn btn-primary" %>
 		</div>
     </div>
     <div class="col-md-offset-5">
