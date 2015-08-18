@@ -1,21 +1,22 @@
-<div class="col-md-12">
 
- <h1> <%= @npo.name %>'s page</h1>
-
-</div>
-
-<!-- USER INFO -->
+<!-- NPO INFO -->
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 col-md-4">
+  	
+    <div class="col-md-4">
+		<div class="thumbnail">
 
-    <h3>my information</h3>
-
-    <p>name: <%= @npo.name %> </p>
-    <p>about: <%= @npo.about %> </p>
-    <p>data joined: <%= @time %> </p>
-
+		    <h3>name: <%= @npo.name %> </h3>
+		    <p>about: <%= @npo.about %> </p>
+		    <p>data joined: <%= @time %> </p>
+		</div>
     </div>
+    <div class="col-md-offset-5">
+    	<div class="thumbnail">
+			<h3>This is where the tasks will be displayed, we need to add the @task to the npos controller to do that</h3>
+		</div>
+    </div>
+
   </div>
 </div>

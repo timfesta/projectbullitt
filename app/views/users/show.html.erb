@@ -1,2 +1,22 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+
+<!-- DEV INFO -->
+
+<div class="container">
+  <div class="row">
+  	
+    <div class="col-md-4">
+		<div class="thumbnail">
+
+		    <h3>username: <%= @user.username %> </h3>
+		    <p>email: <%= @user.email %> </p>
+		    <p>date joined: <%= @user.created_at %> </p>
+		</div>
+    </div>
+    <div class="col-md-offset-5">
+    	<div class="thumbnail">
+			<h3>This is where the completed tasks will be displayed.</h3>
+		</div>
+    </div>
+
+  </div>
+</div>
