@@ -1,5 +1,17 @@
-require 'rails_helper'
+  require 'rails_helper'
+  RSpec.describe Npo, type: :model do
 
-RSpec.describe Npo, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+    before do
+      npo_params = {}
+      npo_params[:name] = FFaker::Lorem.words(2).join
+      npo_params[:about] = FFaker::Lorem.words(2).join
+      @npo = Npo.create(npo_params)
+    end
+
+describe "ActiveRecord associations" do
+  it { expect(@npo.tasks).to eq([])}
+
+  end
+  end
+
+

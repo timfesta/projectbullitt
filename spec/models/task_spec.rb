@@ -1,5 +1,17 @@
-require 'rails_helper'
+  require 'rails_helper'
+  RSpec.describe Task, type: :model do
 
-RSpec.describe Task, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
-end
+    before do
+      task_params = {}
+      task_params[:issue] = FFaker::Lorem.words(2).join
+      task_params[:description] = FFaker::Lorem.words(2).join
+      task_params[:language] = FFaker::Lorem.words(2).join
+      task_params[:framework] = FFaker::Lorem.words(2).join
+      @task = Task.create(task_params)
+    end
+
+describe "ActiveRecord associations" do
+  it { expect(@task.projects).to eq([])}
+
+  end
+  end
