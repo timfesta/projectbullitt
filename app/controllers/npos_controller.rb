@@ -50,6 +50,6 @@ class NposController < ApplicationController
 
 	private 
 	def npo_params 
-		params.require(:npo).permit(:name, :about, :created_at)
+		params.require(:npo).permit(:name, :about, :created_at, :avatar)
 	end
 end

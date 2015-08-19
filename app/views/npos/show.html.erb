@@ -3,10 +3,12 @@
 
 <div class="container">
   <div class="row">
-   <div class="col-md-4">
+   <div class="col-md-5">
 		<div class="thumbnail">
-	    <h3>Name: <%= @npo.name %> </h3>
-	    <p>About: <%= @npo.about %> </p>
+			<%= image_tag @npo.avatar.url(:medium) %>
+	    <h3><%= @npo.name %> </h3>
+	    <h4>Our Mission:</h4> 
+	    <p><%= @npo.about %> </p>
 	    <p>Date Joined: <%= @npo.created_at %> </p>
       <% if @npo.user.id == session[:user_id] %>
  			<%= link_to "Edit Your Account", edit_npo_path, class: "btn btn-primary" %>

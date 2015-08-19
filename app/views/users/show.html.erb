@@ -19,7 +19,9 @@
           <% if current_user.npos.any? %>
             <% @user.npos.each do |npo| %>
               <div class="well">
-                <p>Non Profit Organization: <%= link_to npo.name, npo_path(npo) %></p>
+                <%= image_tag npo.avatar.url(:medium) %>
+                <p><%= link_to npo.name, npo_path(npo) %></p>
+
               </div>    
             <% end %>
           <% end %>
