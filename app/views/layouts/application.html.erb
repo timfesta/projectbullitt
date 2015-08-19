@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ProjectBullitt</title>
+
+  <title>Developers Without Borders</title>
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -15,7 +17,13 @@
 
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
-		<%= link_to "Project Bullitt", root_path, class: "navbar-header navbar-brand" %>
+		
+		
+		
+		
+	<%= link_to image_tag('logosmall.png'), root_path, id: "logo" %>
+	<%= link_to "Developers Without Borders", root_path, class: "navbar-header navbar-brand" %>
+		
 		<!-- log in / log out -->
 		<% if logged_in? %>
 			<%= link_to "Logout", logout_path, class: "btn navbar-btn navbar-right btn-primary" %>
