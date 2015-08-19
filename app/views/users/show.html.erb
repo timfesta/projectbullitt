@@ -5,6 +5,7 @@
   <div class="row">
 
     <div class="col-md-4 thumbnail">
+       <%= image_tag @user.avatar.url(:medium) %>
 	    <h3>username: <%= @user.username %> </h3>
 	    <p>email: <%= @user.email %> </p>
 	    <p>date joined: <%= @user.created_at %> </p>
