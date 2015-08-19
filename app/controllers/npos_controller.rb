@@ -14,7 +14,7 @@ class NposController < ApplicationController
 		if npo.save
 			redirect_to npo_path(npo)
 		else
-			redirect_to root
+			redirect_to root_path
 		end
 	end
 
