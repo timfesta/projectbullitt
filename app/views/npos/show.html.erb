@@ -5,9 +5,12 @@
   <div class="row">
    <div class="col-md-4">
 		<div class="thumbnail">
-		    <h3>Name: <%= @npo.name %> </h3>
-		    <p>About: <%= @npo.about %> </p>
-		    <p>Date Joined: <%= @npo.created_at %> </p>
+	    <h3>Name: <%= @npo.name %> </h3>
+	    <p>About: <%= @npo.about %> </p>
+	    <p>Date Joined: <%= @npo.created_at %> </p>
+      <% if @npo.user.id == session[:user_id] %>
+ 			<%= link_to "Edit Your Account", edit_npo_path, class: "btn btn-primary" %>
+      <% end %>
 		</div>
   </div>
   <div class="col-md-offset-5">

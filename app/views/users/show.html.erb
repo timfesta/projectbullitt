@@ -5,15 +5,13 @@
   <div class="row">
 
     <div class="col-md-4 thumbnail">
-       <%= image_tag @user.avatar.url(:medium) %>
+      <%= image_tag @user.avatar.url(:medium) %>
 	    <h3>Username: <%= @user.username %> </h3>
 	    <p>Email: <%= @user.email %> </p>
 	    <p>Date Joined: <%= @user.created_at %> </p>
       <% if @user.id == session[:user_id] %>
         <%= link_to "Edit Your Account", edit_user_path, class: "btn btn-primary" %>
       <% end %>
-      
-
     </div>  
     <div class="col-md-offset-5 thumbnail">
     <% if logged_in? %>
