@@ -35,6 +35,9 @@
 				<% end %>
 			<% else %>
 			<h3>No issues currently available</h3>
+           <% if @npo.user.id == session[:user_id] %>
+          <%= link_to "Add A Task", new_npo_task_path(@npo), class: "btn btn-primary" %>
+        <% end %>
 	  	<% end %>
 		</div>
   </div>
