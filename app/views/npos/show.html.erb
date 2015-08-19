@@ -20,17 +20,10 @@
 	    		<p>Issue:<%= task.issue %></p>
 
           <%= form_for :project, url: projects_path do |f| %>
-        
              <%= f.hidden_field :task_id, class: "form-control", value: task.id%>
              <%= f.hidden_field :status, class: "form-control", value: "pending"%>
              <%= f.submit "interested!", class: "btn btn-primary" %>
              <% end %>
-
-
-
-
-
-
 	    	<% end %>
         <br>
         <br>
