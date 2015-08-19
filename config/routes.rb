@@ -12,16 +12,17 @@ Rails.application.routes.draw do
 
   resources :npos do 
     resources :tasks
+    resources :projects, only: [:index]
   end
   get '/npoform', to: 'npos#new'
 
   # resources :tasks use this later for task functionality
 
-  resources :projects, only: [:new, :create, :show]
+  resources :projects, only: [:create, :show, :edit, :update]
 end
 
 
-#        Prefix Verb   URI Pattern                            Controller#Action
+#  Prefix Verb   URI Pattern                            Controller#Action
 #          root GET    /                                      welcome#index
 #         users POST   /users(.:format)                       users#create
 #     edit_user GET    /users/:id/edit(.:format)              users#edit
@@ -40,6 +41,7 @@ end
 #               PATCH  /npos/:npo_id/tasks/:id(.:format)      tasks#update
 #               PUT    /npos/:npo_id/tasks/:id(.:format)      tasks#update
 #               DELETE /npos/:npo_id/tasks/:id(.:format)      tasks#destroy
+#  npo_projects GET    /npos/:npo_id/projects(.:format)       projects#index
 #          npos GET    /npos(.:format)                        npos#index
 #               POST   /npos(.:format)                        npos#create
 #       new_npo GET    /npos/new(.:format)                    npos#new
@@ -50,5 +52,12 @@ end
 #               DELETE /npos/:id(.:format)                    npos#destroy
 #       npoform GET    /npoform(.:format)                     npos#new
 #      projects POST   /projects(.:format)                    projects#create
-#   new_project GET    /projects/new(.:format)                projects#new
+#  edit_project GET    /projects/:id/edit(.:format)           projects#edit
 #       project GET    /projects/:id(.:format)                projects#show
+#               PATCH  /projects/:id(.:format)                projects#update
+#               PUT    /projects/:id(.:format)                projects#update
+
+
+
+
+

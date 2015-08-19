@@ -1,6 +1,3 @@
-
-<!-- NPO INFO -->
-
 <div class="container">
   <div class="row">
    <div class="col-md-5">
@@ -13,6 +10,7 @@
       <% if @npo.user.id == session[:user_id] %>
  			<%= link_to "Edit Your Account", edit_npo_path, class: "btn btn-primary" %>
       <% end %>
+      <p> <%= link_to @npo.projects.where(status: "pending").count, npo_projects_path(:npo_id) %> open projects</p> 
 		</div>
   </div>
   <div class="col-md-offset-5">

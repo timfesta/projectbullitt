@@ -25,15 +25,23 @@
               </div>    
             <% end %>
           <% end %>
-        <%= link_to "Add A Nonprofit Organization", new_npo_path, class: "btn btn-primary" %>
-      <% else %>
-        <p>This is where developers will be able to see projects that they are involved in or trying to join (@project)</p>
-        <% current_user.projects.each do |project| %> 
-        <%= project.id %> 
-        <% end %> 
-      <% end %>
+        <% end %>
+      <%= link_to "Add A Nonprofit Organization", new_npo_path, class: "btn btn-primary" %>
+    <% else %>
+      <p>This is where developers will be able to see projects that they are involved in or trying to join (@project)</p>
+      <% current_user.projects.each do |project| %> 
+      <p>
+      <%= link_to project.task.description, npo_task_path(project.task.npo, project.task) %> - 
+      </p>
+      <% end %> 
     <% end %>
 			<h3>This is where the completed tasks will be displayed. (@projects)</h3>
 
   </div>
 </div>
+
+
+ 
+
+
+ 

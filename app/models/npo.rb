@@ -1,7 +1,7 @@
 class Npo < ActiveRecord::Base
-	has_many :issues
 	has_many :tasks
 	belongs_to :user
+  has_many :projects, through: :tasks
  
   has_attached_file :avatar,
                    :styles => { :medium => "200x200>", :thumb => "44x44#" },

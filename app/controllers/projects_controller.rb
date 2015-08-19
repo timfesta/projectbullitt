@@ -1,10 +1,10 @@
 class ProjectsController < ApplicationController
 
-  # def new 
-  #   @project = Project.new
-  #   render :new
-  # end 
-
+  def index 
+    @project = Project.all
+    render :index
+    end
+  
   def create 
     project = current_user.projects.new(project_params)
     project.save
@@ -14,6 +14,12 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     render :show
+  end
+
+  def update 
+    project = current_user.projects.edit(project_params)
+    project.save
+    redirect_to profile_path(current_user)
   end
 
 private
