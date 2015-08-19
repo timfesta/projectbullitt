@@ -4,7 +4,8 @@
 
   <title>Developers Without Borders</title>
 
-
+	
+	<link rel="shortcut icon" href="http://i51.photobucket.com/albums/f364/esbenbsmith/dwbicon_zps5gqyy0ms.png" type="image/x-icon" />
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <%= csrf_meta_tags %>
@@ -15,32 +16,42 @@
 </head>
 <body>
 
-<nav class="navbar navbar-default">
-	<div class="container-fluid">
-		
-		
-		
-		
-	<%= link_to image_tag('logosmall.png'), root_path, id: "logo" %>
-	<%= link_to "Developers Without Borders", root_path, class: "navbar-header navbar-brand" %>
-		
-		<!-- log in / log out -->
-		<% if logged_in? %>
-			<%= link_to "Logout", logout_path, class: "btn navbar-btn navbar-right btn-primary" %>
-			<%= link_to "Profile", profile_path(current_user), class: "btn navbar-btn navbar-right btn-primary" %>	
-		<% else %>
-			<%= link_to "Login", login_path, class: "btn navbar-btn navbar-right btn-primary" %>
-			<%= link_to "Sign Up", signup_path, class: "btn navbar-btn navbar-right btn-primary" %>
-		<% end %>
-	</div>
-</nav>
+<nav class="navbar navbar-default navbar-static-top" role="navigation">
+		<div class="container">
+	    	<div class="navbar-header">
+	    		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+	    			<span class="icon-bar"></span>
+	    			<span class="icon-bar"></span>
+	    			<span class="icon-bar"></span>
+	    		</button>
+	    		<a href="/" class="navbar-brand" > <span><%= image_tag "logosmall.png" %></span> Developers Without Borders</a>
+	    	</div>
+			<div class="collapse navbar-collapse"> 
+	    		<ul class="nav navbar-nav navbar-right">
+	    			<!-- log in / log out -->
+					<% if logged_in? %>
+						<%= link_to "Logout", logout_path, class: "btn navbar-btn navbar-right btn-primary" %>
+						<%= link_to "Profile", profile_path(current_user), class: "btn navbar-btn navbar-right btn-primary" %>	
+					<% else %>
+						<%= link_to "Login", login_path, class: "btn navbar-btn navbar-right btn-primary" %>
+						<%= link_to "Sign Up", signup_path, class: "btn navbar-btn navbar-right btn-primary" %>
+					<% end %>
+	    		</ul>
+	    	</div>
+		</div>
+	</nav> 
 
 <div="container">
 	<%= yield %>
 </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
 
 </body>
 </html>
