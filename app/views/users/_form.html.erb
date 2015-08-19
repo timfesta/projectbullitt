@@ -1,0 +1,28 @@
+<div class="col-sm-4 col-sm-offset-4">
+  <br>
+    <div class="signupbox">
+    <legend>Sign Up</legend>
+    <%= form_for @user do |f| %>
+       <%= f.label :username, "username" %>:
+       <%= f.text_field :username, class:"form-control", required: true %><br />
+       <%= f.label :email, "email" %>:
+       <%= f.email_field :email, class:"form-control", required: true %><br />
+
+       <%= f.label :password, "password" %>:
+       <%= f.password_field :password, class:"form-control", required: true %><br />
+
+       <%= f.select :is_npo, options_for_select(
+          [
+            ["i represent a non-profit org.", true],
+            ["i'm a developer.", false], 
+          ]
+        ), {}, class: "form-control col-sm-4" %>
+       <br>
+       <br>
+       <br>
+       <%= f.submit "Submit", class:"btn btn-primary" %>
+    <% end %>
+
+
+  </div>
+</div>
