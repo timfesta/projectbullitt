@@ -1,6 +1,6 @@
 
 <div class="well">
-  <p>Issue:  <%= link_to task.issue, npo_task_path(@npo, task) %></p>
+  <p>Issue:  <%= task.issue %></p>
   <p>Description: <%= task.description %></p>
   <% if logged_in? %>
     <% if current_user.is_npo == false %>
