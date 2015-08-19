@@ -43,12 +43,23 @@ class UsersController < ApplicationController
   def update
     user = User.find(params[:id])
     if current_user
-      flash[:notice] = "Successfully updated profile!"
+      # ill add these later (antonio)
+      # flash[:notice] = "Successfully updated profile!"
       user.update_attributes(user_params)
-      redirect_to profile_path
+      redirect_to profile_path(current_user)
     else
       flash[:error] = user.errors.full_messages.join(', ')
       redirect_to edit_profile_path
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    if current_user
+      # flash[:error] = "Successfully deleted profile!"
+      @user.destroy
+      session[:user_id] = nil
+      redirect_to root_path
     end
   end
   
