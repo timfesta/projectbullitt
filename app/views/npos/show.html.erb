@@ -1,13 +1,7 @@
-<<<<<<< HEAD
-
-<!-- NPO INFO -->
-
-
 <div class="container">
   <div class="row">
    <div class="col-md-5">
 		<div class="thumbnail">
-
 			<%= image_tag @npo.avatar.url(:medium) %>
 	    <h3><%= @npo.name %> </h3>
 	    <h4>Our Mission:</h4> 
@@ -17,7 +11,6 @@
  			<%= link_to "Edit Your Account", edit_npo_path, class: "btn btn-primary" %>
       <% end %>
       <p> <%= link_to @npo.projects.where(status: "pending").count, npo_projects_path(:npo_id) %> open projects</p> 
-
 		</div>
   </div>
   <div class="col-md-offset-5">
@@ -25,7 +18,6 @@
 			<% if @npo.tasks.any? %>
 				<h3>Looking for Developer Help:</h3>
 	    	<% @npo.tasks.each do |task| %>
-
 	    	<div class="well">
 	  			<p>Issue:  <%= link_to task.issue, npo_task_path(@npo, task) %></p>
 	  			<p>Description: <%= task.description %></p>

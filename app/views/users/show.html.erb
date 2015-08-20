@@ -16,17 +16,16 @@
     <div class="col-md-offset-5 thumbnail">
     <% if logged_in? %>
       <% if current_user.is_npo == true %>
-          <% if current_user.npos.any? %>
-            <% @user.npos.each do |npo| %>
-              <div class="well">
-                <%= image_tag npo.avatar.url(:medium) %>
-                <p><%= link_to npo.name, npo_path(npo) %></p>
-
-              </div>    
-            <% end %>
+        <% if current_user.npos.any? %>
+          <% @user.npos.each do |npo| %>
+            <div class="well">
+              <%= image_tag npo.avatar.url(:medium) %>
+              <p><%= link_to npo.name, npo_path(npo) %></p>
+            </div>    
           <% end %>
         <% end %>
-      <%= link_to "Add A Nonprofit Organization", new_npo_path, class: "btn btn-primary" %>
+        <%= link_to "Add A Nonprofit Organization", new_npo_path, class: "btn btn-primary" %>
+      <% end %>
     <% else %>
       <p>This is where developers will be able to see projects that they are involved in or trying to join (@project)</p>
       <% current_user.projects.each do |project| %> 
@@ -36,7 +35,6 @@
       <% end %> 
     <% end %>
 			<h3>This is where the completed tasks will be displayed. (@projects)</h3>
-
   </div>
 </div>
 
