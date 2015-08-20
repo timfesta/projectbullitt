@@ -17,7 +17,8 @@ class User < ActiveRecord::Base
                     :storage => :s3,
                     :s3_credentials => Proc.new { |a| a.instance.s3_credentials },
                     :path => "avatars/:id/:style/avatar.:extension",
-                    :default_url => "https://s3.amazonaws.com/<<BUCKET>>/defaults/default_avatar.png"
+                    :default_url => "https://s3.amazonaws.com/vagabondapps/avatars/Developerswithoutborders/avatar.png"
+                        
 
                    		# :avatar, :presence => true,
  validates_attachment :avatar,
