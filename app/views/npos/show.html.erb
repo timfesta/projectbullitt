@@ -10,7 +10,7 @@
  			<%= link_to "Edit Your NPO Organization", edit_npo_path, class: "btn btn-primary" %>
       <% end %>
         <hr>
-      <p>  <%= link_to @npo.projects.where(status: "pending").count, npo_projects_path(:npo_id) %> Pending Requests </p> 
+      <p>  <%= link_to @npo.projects.where(status: "pending").count, npo_projects_path(@npo) %> Pending Requests </p> 
       </center>
 		</div>
   </div>
