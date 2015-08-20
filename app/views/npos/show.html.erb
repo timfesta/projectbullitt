@@ -1,4 +1,3 @@
- <!--        , npo_projects_path(project) -->
 
 <!-- NPO INFO -->
 
@@ -9,7 +8,7 @@
 		    <h3>Name: <%= @npo.name %> </h3>
 		    <p>About: <%= @npo.about %> </p>
 		    <p>Date Joined: <%= @npo.created_at %> </p>
-        <p> <%= link_to @npo.projects.where(status: "pending").count, npo_projects_path(:npo_id) %> open projects</p> 
+        <p> <%= link_to @npo.projects.where(status: "pending").count, npo_projects_path(@npo) %> open projects</p> 
 
 		</div>
   </div>

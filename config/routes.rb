@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 end
 
 
-#  Prefix Verb   URI Pattern                            Controller#Action
+#        Prefix Verb   URI Pattern                            Controller#Action
 #          root GET    /                                      welcome#index
 #         users POST   /users(.:format)                       users#create
 #     edit_user GET    /users/:id/edit(.:format)              users#edit
@@ -57,7 +57,4 @@ end
 #               PATCH  /projects/:id(.:format)                projects#update
 #               PUT    /projects/:id(.:format)                projects#update
 
-
-
-
-
+              
