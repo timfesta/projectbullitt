@@ -1,14 +1,42 @@
+<div class="col-md-offset-5">
+  
+  <h2> Status of Projects </h2>
 
-<div class="well">
-  <p>Issue:  <%= task.issue %></p>
-  <p>Description: <%= task.description %></p>
-  <% if logged_in? %>
-    <% if current_user.is_npo == false %>
-      <%= form_for :project, url: projects_path do |f| %>
-        <%= f.hidden_field :task_id, class: "form-control", value: task.id%>
-        <%= f.hidden_field :status, class: "form-control", value: "accepted"%>
-        <%= f.submit "accept!", class: "btn btn-primary" %>
+     <% if @myprojects.any? %>
+
+    <div class="well">
+      
+    <% @myprojects.each do |status, projects| %>
+    <h1>Status: <%= status %> </h1>
+    <% projects.each do |project| %> 
+
+    <p>Issue:  <%= project.task.issue  %></p>
+    <p>Description: <%= project.task.description %></p>
+
+     <% if logged_in? && project.status == "pending"%>
+        <% if current_user.is_npo == true %>
+          <%= form_for :project, url: project_path(project), method: "put" do |f| %>
+            <%= f.hidden_field :status, class: "form-control", value: "accepted"%>
+            <%= f.submit "accept!", class: "btn btn-primary" %>
+          <% end %>
+        <% end %>
       <% end %>
+
+      <br>
+
+      <% if logged_in? && project.status == "accepted"%>
+        <% if current_user.is_npo == true %>
+          <%= form_for :project, url: project_path(project), method: "put" do |f| %>
+            <%= f.hidden_field :status, class: "form-control", value: "completed"%>
+            <%= f.submit "complete!", class: "btn btn-primary" %>
+          <% end %>
+        <% end %>
+      <% end %>
+
     <% end %>
-  <% end %>
+    <% end %>
+    <% end %> 
+  </div>
 </div>
+
+
