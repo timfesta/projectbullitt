@@ -30,9 +30,6 @@
 					<% if logged_in? %>
 						<%= link_to "Logout", logout_path, class: "btn navbar-btn navbar-right btn-primary" %>
 						<%= link_to "Profile", profile_path(current_user), class: "btn navbar-btn navbar-right btn-primary" %>
-						<button type="button" class="btn navbar-btn navbar-right btn-primary">
-					  <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> 
-						</button>
 					<% else %>
 						<%= link_to "Login", login_path, class: "btn navbar-btn navbar-right btn-primary" %>
 						<%= link_to "Sign Up", signup_path, class: "btn navbar-btn navbar-right btn-primary" %>
