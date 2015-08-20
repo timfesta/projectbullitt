@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <div class="row">
   <div class="col-md-offset-3 col-md-6">
     <center>
@@ -9,17 +9,17 @@
       <div class="well">
         
       <% @myprojects.each do |status, projects| %>
-      <h1>Status: <%= status %> </h1>
+      <h3>Status: <%= status %> </h3>
       <% projects.each do |project| %> 
 
       <p>Issue:  <%= project.task.issue  %></p>
       <p>Description: <%= project.task.description %></p>
 
-       <% if logged_in? && project.status == "pending"%>
+       <% if logged_in? && project.status == "Pending"%>
           <% if current_user.is_npo == true %>
             <%= form_for :project, url: project_path(project), method: "put" do |f| %>
-              <%= f.hidden_field :status, class: "form-control", value: "accepted"%>
-              <%= f.submit "accept!", class: "btn btn-primary" %>
+              <%= f.hidden_field :status, class: "form-control", value: "Accepted"%>
+              <%= f.submit "Accept!", class: "btn btn-primary" %>
             <% end %>
 
           <% end %>
@@ -27,11 +27,11 @@
 
         <br>
 
-        <% if logged_in? && project.status == "accepted"%>
+        <% if logged_in? && project.status == "Accepted"%>
           <% if current_user.is_npo == true %>
             <%= form_for :project, url: project_path(project), method: "put" do |f| %>
-              <%= f.hidden_field :status, class: "form-control", value: "completed"%>
-              <%= f.submit "complete!", class: "btn btn-primary" %>
+              <%= f.hidden_field :status, class: "form-control", value: "Completed"%>
+              <%= f.submit "Complete!", class: "btn btn-primary" %>
             <% end %>
           <% end %>
         <% end %>

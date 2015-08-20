@@ -10,7 +10,7 @@
  			<%= link_to "Edit Your NPO Organization", edit_npo_path, class: "btn btn-primary" %>
       <% end %>
         <hr>
-      <p>  <%= link_to @npo.projects.where(status: "pending").count, npo_projects_path(@npo) %> Pending Requests </p> 
+      <p>  <%= link_to @npo.projects.where(status: "Pending").count, npo_projects_path(@npo) %> Pending Requests </p> 
       </center>
 		</div>
   </div>
@@ -27,8 +27,8 @@
   					<% if current_user.is_npo == false %>
   			 			<%= form_for :project, url: projects_path do |f| %>
 								<%= f.hidden_field :task_id, class: "form-control", value: task.id%>
-								<%= f.hidden_field :status, class: "form-control", value: "pending"%>
-								<%= f.submit "interested!", class: "btn btn-primary" %>
+								<%= f.hidden_field :status, class: "form-control", value: "Pending"%>
+								<%= f.submit "Interested!", class: "btn btn-primary" %>
            		<% end %>
         		<% end %>
         	<% end %>
