@@ -5,7 +5,7 @@
   <legend>signup for amazing opportunities</legend>
   <%= form_for @npo do |f| %>
      <%= f.label :name, "company name" %>:
-     <%= f.text_field :name, class:"form-control", required: true %><br />
+     <%= f.text_field :name, class:"form-control", required: true, :autofocus => true %><br />
      <%= f.label :about, "about" %>:
      <%= f.text_area :about, class:"form-control", required: true %><br />
      <br>
