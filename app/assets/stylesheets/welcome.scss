@@ -2,9 +2,10 @@
 height: 500px;
 width: 100%;
 padding-top:0px;
-background-image: url(mainsoleil.jpg);
+background-image: url(http://i51.photobucket.com/albums/f364/esbenbsmith/mainsoleil_zpsiuhwwq8m.jpg);
 background-repeat: no-repeat;
 background-position: center;
+background-size:cover;
 color: white;  
 margin-top:-20px;
 text-shadow: 2px 2px 4px #000000;
@@ -27,30 +28,30 @@ text-shadow: 2px 2px 4px #000000;
 
 
 @keyframes fadein {
-    from { background-image: url(starter.jpg); }
-    to   { background-image: url(mainsoleil.jpg); }
+    from { background-image: url(http://i51.photobucket.com/albums/f364/esbenbsmith/starter_zps4y6eafds.jpg); }
+    to   { background-image: url(http://i51.photobucket.com/albums/f364/esbenbsmith/mainsoleil_zpsiuhwwq8m.jpg); }
 }
 
 /* Firefox < 16 */
 @-moz-keyframes fadein {
-    from { background-image: url(starter.jpg); }
-    to   { background-image: url(mainsoleil.jpg); }
+    from { background-image: url(http://i51.photobucket.com/albums/f364/esbenbsmith/starter_zps4y6eafds.jpg); }
+    to   { background-image: url(http://i51.photobucket.com/albums/f364/esbenbsmith/mainsoleil_zpsiuhwwq8m.jpg); }
 }
 
 /* Safari, Chrome and Opera > 12.1 */
 @-webkit-keyframes fadein {
-    from { background-image: url(starter.jpg); }
-    to   { background-image: url(mainsoleil.jpg); }
+    from { background-image: url(http://i51.photobucket.com/albums/f364/esbenbsmith/starter_zps4y6eafds.jpg); }
+    to   { background-image: url(http://i51.photobucket.com/albums/f364/esbenbsmith/mainsoleil_zpsiuhwwq8m.jpg); }
 }
 
 /* Internet Explorer */
 @-ms-keyframes fadein {
-    from { background-image: url(starter.jpg); }
-    to   { background-image: url(mainsoleil.jpg); }
+    from { background-image: url(http://i51.photobucket.com/albums/f364/esbenbsmith/starter_zps4y6eafds.jpg); }
+    to   { background-image: url(http://i51.photobucket.com/albums/f364/esbenbsmith/mainsoleil_zpsiuhwwq8m.jpg); }
 }
 
 /* Opera < 12.1 */
 @-o-keyframes fadein {
-   from { background-image: url(starter.jpg); }
-    to   { background-image: url(mainsoleil.jpg); }
+   from { background-image: url(http://i51.photobucket.com/albums/f364/esbenbsmith/starter_zps4y6eafds.jpg); }
+    to   { background-image: url(http://i51.photobucket.com/albums/f364/esbenbsmith/mainsoleil_zpsiuhwwq8m.jpg); }
 }
