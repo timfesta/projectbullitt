@@ -5,30 +5,43 @@
   <div class="row">
 
     <div class="col-md-4 thumbnail">
-       <%= image_tag @user.avatar.url(:medium) %>
+      <%= image_tag @user.avatar.url(:medium) %>
 	    <h3>Username: <%= @user.username %> </h3>
 	    <p>Email: <%= @user.email %> </p>
 	    <p>Date Joined: <%= @user.created_at %> </p>
-      <%= link_to "Edit Your Account", edit_user_path, class: "btn btn-primary" %>
-
+      <% if @user.id == session[:user_id] %>
+        <%= link_to "Edit Your Account", edit_user_path, class: "btn btn-primary" %>
+      <% end %>
     </div>  
     <div class="col-md-offset-5 thumbnail">
-    <% if current_user.is_npo == true %>
-        <% if current_user.npos.any? %>
-          <% @user.npos.each do |npo| %>
-            <div class="well">
-              <p>Non Profit Organization: <%= link_to npo.name, npo_path(npo) %></p>
-            </div>    
+    <% if logged_in? %>
+      <% if current_user.is_npo == true %>
+          <% if current_user.npos.any? %>
+            <% @user.npos.each do |npo| %>
+              <div class="well">
+                <%= image_tag npo.avatar.url(:medium) %>
+                <p><%= link_to npo.name, npo_path(npo) %></p>
+
+              </div>    
+            <% end %>
           <% end %>
         <% end %>
       <%= link_to "Add A Nonprofit Organization", new_npo_path, class: "btn btn-primary" %>
     <% else %>
       <p>This is where developers will be able to see projects that they are involved in or trying to join (@project)</p>
       <% current_user.projects.each do |project| %> 
-      <%= project.id %> 
+      <p>
+      <%= link_to project.task.description, npo_task_path(project.task.npo, project.task) %> - 
+      </p>
       <% end %> 
     <% end %>
 			<h3>This is where the completed tasks will be displayed. (@projects)</h3>
 
   </div>
 </div>
+
+
+ 
+
+
+ 

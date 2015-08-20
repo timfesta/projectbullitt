@@ -1,0 +1,24 @@
+<div class="signuppage">
+  <div class="col-sm-6 col-sm-offset-3">
+  <br>
+  <div class="signupbox">
+    <legend>Edit Non-Profit Organization's Profile</legend>
+    <%= form_for @npo do |f| %>
+      <%= f.label :name, "Organization Name" %>:
+      <%= f.text_field :name, class:"form-control", required: true %><br />
+      <%= f.label :about, "Mission" %>:
+      <%= f.text_area :about, class:"form-control", required: true %><br />
+      <%= f.label :avatar, "Organization Logo (if available)" %>:
+      <%= f.file_field :avatar %> 
+        <%= image_tag @npo.avatar.url(:medium) %>
+        <br>
+        Current Photo
+       <br>
+       <br>
+       <br>
+      <%= f.submit "Update Your Profile", class:"btn btn-primary" %>
+      <%= link_to "Delete This Organization", @npo, method: :delete, class:"btn btn-danger margin-right"  %>
+    <% end %>
+  </div>
+  </div>
+</div>

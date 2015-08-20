@@ -30,7 +30,6 @@ class TasksController < ApplicationController
 		else
 			redirect_to login_path
 		end
-
 	end
 
 	def update
@@ -44,13 +43,12 @@ class TasksController < ApplicationController
 	end
 
 	def destroy
-		
 	end
 
 	private
+	
 	def task_params
 		params.require(:task).permit(:issue, :description, :language, :framework)
-		
 	end
 
 end

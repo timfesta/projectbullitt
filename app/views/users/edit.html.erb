@@ -1,1 +1,29 @@
-<%= render 'form' %>
+<div class="col-sm-4 col-sm-offset-4">
+  <br>
+    <div class="signupbox">
+      <legend>Edit Your Profile</legend>
+      <%= form_for @user, :html => { :multipart => true } do |f| %>
+        <%= f.select :is_npo, options_for_select([
+          ["i represent a non-profit org.", true],
+          ["i'm a developer.", false], ]), 
+          {}, class: "form-control col-sm-4" %>
+        <%= f.label :username, "username" %>:
+        <%= f.text_field :username, class:"form-control", required: true %><br />
+        <%= f.label :email, "email" %>:
+        <%= f.email_field :email, class:"form-control", required: true %><br />
+
+        <%= f.label :password, "password" %>:
+        <%= f.password_field :password, class:"form-control", required: true %><br />
+        <%= f.file_field :avatar %>
+        <br>
+         <%= image_tag @user.avatar.url(:thumb) %>
+        Current Photo
+       <br>
+       <br>
+       <br>
+       <%= f.submit "Submit", class:"btn btn-primary" %>
+      <%= link_to "Delete Your Account", @user, method: :delete, class:"btn btn-danger margin-right"  %>
+    <% end %>
+  </div>
+</div>
+
