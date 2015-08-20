@@ -3,10 +3,18 @@
     <div class="signupbox">
       <legend>Edit Your Profile</legend>
       <%= form_for @user, :html => { :multipart => true } do |f| %>
-        <%= f.select :is_npo, options_for_select([
-          ["i represent a non-profit org.", true],
-          ["i'm a developer.", false], ]), 
-          {}, class: "form-control col-sm-4" %>
+        <!-- added logic to make selection default to current user's :is_npo type -->
+         <% if current_user.is_npo == true %>
+          <%= f.select :is_npo, options_for_select([
+            ["i represent a non-profit org.", true],
+            ["i'm a developer.", false], ]), 
+            {}, class: "form-control col-sm-4" %>
+        <% else %>
+          <%= f.select :is_npo, options_for_select([
+            ["i'm a developer.", false], 
+            ["i represent a non-profit org.", true], ]),
+            {}, class: "form-control col-sm-4" %>
+        <% end %>
         <%= f.label :username, "username" %>:
         <%= f.text_field :username, class:"form-control", required: true %><br />
         <%= f.label :email, "email" %>:
