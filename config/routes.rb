@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
+  get '/about', to: 'welcome#show'
+
   resources :users, except: [:new, :show, :index]
   get '/signup', to: 'users#new'
   get '/users/:id', to: 'users#show', as: 'profile'
