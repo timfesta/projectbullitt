@@ -26,25 +26,22 @@
               <%= image_tag npo.avatar.url(:medium) %>
               <p><%= link_to npo.name, npo_path(npo) %></p>
             </div>    
-          <% end %>
+          
         <% end %>
         <%= link_to "Add A Nonprofit Organization", new_npo_path, class: "btn btn-primary" %>
       <% end %>
-    <% else %>
-      <p>This is where developers will be able to see projects that they are involved in or trying to join (@project)</p>
-      <% current_user.projects.each do |project| %> 
-      <p>
-      <%= link_to project.task.description, npo_task_path(project.task.npo, project.task) %> - 
-      </p>
-      <% end %> 
-    <% end %>
+    <% elsif current_user.is_npo ==false %>
+     
 			<h3> Projects Applied To: </h3>
       <hr>
       <% current_user.projects.each do |project| %> 
       <p>
       <%= link_to project.task.issue, npo_task_path(project.task.npo, project.task) %>  -
       <%= link_to project.task.description, npo_task_path(project.task.npo, project.task) %> </p>
+       
         <% end %> 
+      <% end %> 
+      <% end %>
       <center>
   </div>
 </div>
