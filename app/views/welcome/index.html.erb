@@ -3,29 +3,45 @@
 	<br>
   	<h1>Connecting Developers to Good Causes</h1>		
   	<div id="joinbutton">
-  		<%= link_to "Make a difference now", signup_path, class: "btn btn-lg btn-primary" %>
+  		<%= link_to "Make A Difference", signup_path, class: "btn btn-lg btn-primary" %>
   	<div>
   	</center>
 </div>
+
 <div class="container">
-	<div class="row">
-		<div class="col-md-6">
-			<center><p>Are you a developer looking for pro bono work?</p></center>
-			<div class="thumbnail">
-				<center>
-					<p>This is where we display all the tasks available</p>
-				</center>
-			</div>
+	<br>
+	<center>
+		
+			<div class="row">
+				
+				<div class="col-md-4">
+				<div class="thumbnail">
+					<h3> Latest NPO:</h3>
+					<% @npo.each do |npo| %> 
+					<hr>
+		  		<p><%= link_to npo.name, npo_path(npo) %></p>
+		  		<% end  %> 
+		  		</div>
+				</div>
+				
+	
+				<div class="col-md-8">
+				<div class="thumbnail">
+				<h3>Latest Issues:</h3>
+					<% @task.each do |task| %> 
+					<hr>
+			  	<p>Issue:  <%= link_to task.issue, npo_task_path(task.npo, task)  %></p>
+			  	<p>Description: <%= task.description %></p>
+			  	<% end  %> 
+			  	</div>
+		  	</div>
+			
 		</div>
-		<div class="col-md-6">
-			<center><p>Are you a non-profit organization looking for help from developers?</p></center>
-			<div class="thumbnail">
-				<center>
-					<p>This is where we display developer profiles that have signed up</p>
-				</center>
-			</div>
-		</div>
-	</div>
+	</center>
 </div>
+		
+		
+
+
 
 	
