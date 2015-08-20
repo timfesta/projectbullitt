@@ -1,5 +1,8 @@
 source 'https://rubygems.org'
 
+gem 'aws-sdk', '~> 1.6'
+
+gem 'dotenv-rails', :groups => [:development, :test]
 
 gem "paperclip", "~> 4.3"
 
