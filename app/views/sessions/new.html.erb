@@ -8,10 +8,10 @@
   <br>
 
   <%= form_for :user, url: sessions_path, :html => {:id => "new_login"} do |f| %>
-    <%= f.label :email, "email" %>:
+    <%= f.label :email %>:
     <%= f.email_field :email, class:"form-control", required: true %><br />
 
-    <%= f.label :password, "password" %>:
+    <%= f.label :password %>:
     <%= f.password_field :password, class:"form-control", required: true %><br />
     <%= f.submit "Submit", class:"btn btn-primary" %>
   <% end %>
