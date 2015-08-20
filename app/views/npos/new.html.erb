@@ -1,4 +1,22 @@
 <div class="signuppage">
+
+<div class="col-sm-4 col-sm-offset-4">
+<br>
+  <div class="signupbox">
+  <legend>signup for amazing opportunities</legend>
+  <%= form_for @npo do |f| %>
+     <%= f.label :name, "company name" %>:
+     <%= f.text_field :name, class:"form-control", required: true, :autofocus => true %><br />
+     <%= f.label :about, "about" %>:
+     <%= f.text_area :about, class:"form-control", required: true %><br />
+     <br>
+     <%= f.submit "become a member!", class:"btn btn-primary" %>
+  <% end %>
+  
+  
+</div>
+</div>
+
   <div class="col-sm-6 col-sm-offset-3">
   <br>
     <div class="signupbox">
@@ -15,4 +33,5 @@
       <% end %>
     </div>
   </div>
+>>>>>>> b8d4b0a643263afdc35242e9877042dd762d989a
 </div>
