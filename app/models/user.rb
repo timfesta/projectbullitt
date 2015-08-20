@@ -1,5 +1,11 @@
 class User < ActiveRecord::Base
+
 	has_secure_password
+
+
+  validates_presence_of :password_confirmation
+
+  # relationships
 	has_many :npos
   has_many :projects
   has_many :tasks, through: :projects

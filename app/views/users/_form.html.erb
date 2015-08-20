@@ -1,28 +1,39 @@
 <div class="col-sm-4 col-sm-offset-4">
   <br>
-    <div class="signupbox">
-    <legend>Sign Up</legend>
-
-    <%= form_for @user, :url => users_path, :html => { :multipart => true } do |f| %>
-          <%= f.select :is_npo, options_for_select([
-            ["i represent a non-profit org.", true],
-            ["i'm a developer.", false], ]), 
-            {}, class: "form-control col-sm-4" %>
-          <%= f.label :username, "username" %>:
-          <%= f.text_field :username, class:"form-control", required: true %><br />
-          <%= f.label :email, "email" %>:
-          <%= f.email_field :email, class:"form-control", required: true %><br />
-
-          <%= f.label :password, "password" %>:
-          <%= f.password_field :password, class:"form-control", required: true %><br />
-          <%= f.file_field :avatar %>
-         <br>
-         <br>
-         <br>
-         <%= f.submit "Submit", class:"btn btn-primary" %>
+  <div class="signupbox">
+    <% if logged_in? %>
+      <legend>Login</legend>
+    <% else %>
+      <legend>Sign Up</legend>
     <% end %>
-
-
+    <%= form_for @user, :html => { :multipart => true } do |f| %>
+      <%= f.label :username, "Username" %>:
+      <%= f.text_field :username, class:"form-control", required: true %><br />
+      <%= f.label :email, "Email" %>:
+      <%= f.email_field :email, class:"form-control", required: true %><br />
+      <%= f.label :password, "Password" %>:
+      <%= f.password_field :password, class:"form-control", required: true %><br />
+      <%= f.label :password, "Retype Password" %>:
+      <%= f.password_field :password_confirmation, class:"form-control", required: true %><br />
+      <%= f.radio_button(:is_npo, true) %>
+      <%= f.label(:is_npo, "I Represent A Non-Profit Org.") %>&nbsp&nbsp
+      <%= f.radio_button(:is_npo, false) %>
+      <%= f.label(:is_npo, "I'm A Developer") %>
+      <br>
+      <br>
+      <%= f.file_field :avatar %>
+      <br>
+      <% if logged_in? %>
+       <%= image_tag @user.avatar.url(:medium) %>
+        Current Photo
+        <br>
+        <br>
+        <br>
+        <%= f.submit "Update Profile", class:"btn btn-primary" %>
+        <%= link_to "Delete Account",  @user, method: :delete, class: "btn btn-danger"  %>
+      <% else %>
+        <%= f.submit "Join Us!", class:"btn btn-primary" %>
+      <% end %>
+    <% end %>
   </div>
 </div>
-
